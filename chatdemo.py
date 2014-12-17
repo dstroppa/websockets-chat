@@ -96,6 +96,7 @@ class ChatSocketHandler(tornado.websocket.WebSocketHandler):
 
 
 def main():
+    logging.basicConfig(filename='chatdemo.log',level=logging.DEBUG)
     tornado.options.parse_command_line()
     app = Application()
     app.listen(options.port)
