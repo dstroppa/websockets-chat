@@ -98,8 +98,10 @@ class ChatSocketHandler(tornado.websocket.WebSocketHandler):
 def main():
     logging.basicConfig(filename='chatdemo.log',level=logging.DEBUG)
     tornado.options.parse_command_line()
-    app = Application()
-    app.listen(options.port)
+    #app = Application()
+    #app.listen(options.port)
+    http_server = tornado.httpserver.HTTPServer(Application())
+    http_server.listen(options.port,xheaders=True)
     tornado.ioloop.IOLoop.instance().start()
 
 
