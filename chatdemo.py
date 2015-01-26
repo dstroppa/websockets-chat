@@ -20,6 +20,7 @@ Authentication, error handling, etc are left as an exercise for the reader :)
 
 import logging
 import tornado.escape
+import tornado.httpserver
 import tornado.ioloop
 import tornado.options
 import tornado.web
